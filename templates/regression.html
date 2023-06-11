@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <img src="../static/media/Linear_Regression.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Linear Regression Analysis</h5>
+            <p class="card-text">The linear regression technique involves the continuous dependent variable and the independent variables can be continuous or discrete.</p>
+            <a href="{{ url_for('linear_regressor') }}" class="btn btn-outline-warning yellow_1 btn-block">Example</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="../static/media/Logistic_Regression.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Logistic Regression Analysis</h5>
+            <p class="card-text">The logistic regression technique involves dependent variable which can be represented in the binary (0 or 1, true or false, yes or no) values.</p>
+            <a href="#" class="btn btn-outline-warning yellow_1 btn-block">Example</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="../static/media/svm.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Support Vector Machines</h5>
+            <p class="card-text">Support Vector Machine (SVM) is a supervised machine learning algorithm which can be used for both classification or regression challenges.</p>
+            <a href="#" class="btn btn-outline-warning yellow_1 btn-block">Example</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

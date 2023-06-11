@@ -1,0 +1,96 @@
+{% extends "layout2.html" %}
+{% block content %}
+
+<main role="main">
+
+
+
+    <section class="jumbotron text-center" id="particles-js">
+        <div class="textlanding" style="padding: 20px; margin: auto;">
+            <img src="../static/images/dp-modified.png" style="width:200px">
+            <h3 class="word" ; style="color:rgba(0, 0, 0, 0.675); font-family: Verdana, sans-serif">Hi, I'm </h3>
+            <div class="word">SHUBHAM -
+                <u style="color:#660f83">DATA SCIENTIST</u>
+            </div>
+
+            <p class="lead text-muted" style="color:rgb(70, 3, 3)">Analytics professional with an experience of
+                4+ years of developing
+                and
+                creating
+                End to End AI model Services.
+                Prime focus in NLP | Python based Automation | Question Answering Models | Cloud in
+                Insurance &
+                Healthcare domain.</p>
+            <p>
+                <a href="#" class="btn btn-primary my-2">Hire me</a>
+                <a href="#" class="btn btn-secondary my-2">Projects</a>
+            </p>
+        </div>
+        <div class="after-textlanding" style="padding: 20px; margin: auto;">
+            <svg width="1000" height="100">
+                <line x1="0" y1="50" x2="1000" y2="50" style="stroke:black; stroke-width:1.5"></line>
+
+                <circle cx="150" cy="50" r="10" stroke="#f8f9fa" stroke-width="6" fill="#69b3a2"></circle>
+                <text text-anchor="middle" x="150" y="80" fill="black">2018</text>
+                <text font-size="13" text-anchor="middle" x="70" y="30" fill="black">Undergraduate Degree</text>
+                <text style="font-style: italic" font-size="13" text-anchor="middle" x="70" y="80"
+                    fill="#808080">Manipal University</text>
+
+                <circle cx="450" cy="50" r="10" stroke="#f8f9fa" stroke-width="6" fill="#69b3a2"></circle>
+                <text text-anchor="middle" x="450" y="80" fill="black">2020</text>
+                <text font-size="13" text-anchor="middle" x="300" y="30" fill="black">Business Intelligence
+                    Engineer</text>
+                <text style="font-style: italic" font-size="13" text-anchor="middle" x="300" y="80"
+                    fill="#808080">Birlasoft Pvt. Ltd.</text>
+
+                <circle cx="650" cy="50" r="10" stroke="#f8f9fa" stroke-width="6" fill="#69b3a2"></circle>
+                <text text-anchor="middle" x="650" y="80" fill="black">2020</text>
+                <text font-size="13" text-anchor="middle" x="550" y="30" fill="black">Postgraduate
+                    Diploma(AI/ML)</text>
+                <text style="font-style: italic" font-size="13" text-anchor="middle" x="550" y="80"
+                    fill="#808080">IIIT-Bangalore</text>
+
+                <circle cx="850" cy="50" r="10" stroke="#f8f9fa" stroke-width="6" fill="#69b3a2"></circle>
+                <text text-anchor="middle" x="850" y="80" fill="black">2022</text>
+                <text font-size="13" text-anchor="middle" x="750" y="30" fill="black">Assistant Manager</text>
+                <text style="font-style: italic" font-size="13" text-anchor="middle" x="750" y="80" fill="#808080">EXL
+                    Services Pvt. Ltd.</text>
+
+                <text font-size="13" text-anchor="middle" x="930" y="30" fill="black">Lead Assistant Manager</text>
+                <text style="font-style: italic" font-size="13" text-anchor="middle" x="930" y="80" fill="#808080">EXL
+                    Services Pvt. Ltd.</text>
+
+            </svg>
+        </div>
+    </section>
+
+</main>
+<div class="container">
+    <div class="chatbox">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__image--header">
+                    <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png"
+                        alt="image">
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">Chat support</h4>
+                    <p class="chatbox__description--header">Hi. My name is Shubham. How can I help you?</p>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div></div>
+            </div>
+            <div class="chatbox__footer">
+                <input type="text" placeholder="Write a message...">
+                <button class="chatbox__send--footer send__button">Send</button>
+            </div>
+        </div>
+        <div class="chatbox__button">
+            <button><img src="../static/images/chatbox-icon.svg" /></button>
+        </div>
+    </div>
+</div>
+
+<script src="../static/app.js"></script>
+{% endblock %}

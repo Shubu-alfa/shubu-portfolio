@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Item Recommendation System</h1>
+      <p class="lead text-muted">Recommender systems help the users to get personalized recommendations, helps users to take correct decisions in their online transactions, increase sales and redefine the users web browsing experience, retain the customers, enhance their shopping experience.</p>
+      <br>
+      {{Bought_item}}
+      <br>
+      {{Recommended_item}}
+      <br>
+      {{Probability}}
+    </div>
+  </section>
+  <form method ="POST" class ="form_shubu_v1" action="{{ url_for('recommendation') }}" method ="POST">
+    <div class="form-group col">
+      <label for="exampleFormControlSelect1">Product Bought</label>
+      <select class="form-control" id="exampleFormControlSelect1" name = "item_bought">
+        <!-- <option>almonds</option>
+        <option>antioxydant juice</option>
+        <option>asparagus</option>
+        <option>avocado</option>
+        <option>babies food</option>
+        <option>bacon</option>
+        <option>barbecue sauce</option>
+        <option>black tea</option>
+        <option>blueberries</option>
+        <option>body spray</option>
+        <option>bramble</option>
+        <option>brownies</option>
+        <option>bug spray</option>
+        <option>burger sauce</option>
+        <option>burgers</option>
+        <option>butter</option> -->
+        <!-- <option>cake</option>
+        <option>candy bars</option>
+        <option>carrots</option>
+        <option>cauliflower</option>
+        <option>cereals</option>
+        <option>champagne</option>
+        <option>chicken</option>
+        <option>chili</option> -->
+        <option>chocolate</option>
+        <!-- <option>chocolate bread</option>
+        <option>chutney</option>
+        <option>cider</option>
+        <option>clothes accessories</option>
+        <option>cookies</option>
+        <option>cooking oil</option>
+        <option>corn</option>
+        <option>cottage cheese</option>
+        <option>cream</option>
+        <option>dessert wine</option>
+        <option>eggplant</option>
+        <option>eggs</option>
+        <option>energy bar</option>
+        <option>energy drink</option> -->
+        <option>escalope</option>
+        <!-- <option>extra dark chocolate</option>
+        <option>flax seed</option>
+        <option>french fries</option>
+        <option>french wine</option>
+        <option>fresh bread</option>
+        <option>fresh tuna</option>
+        <option>fromage blanc</option>
+        <option>frozen smoothie</option> -->
+        <option>frozen vegetables</option>
+        <!-- <option>gluten free bar</option> -->
+        <option>grated cheese</option>
+        <!-- <option>green beans</option>
+        <option>green grapes</option>
+        <option>green tea</option> -->
+        <option>ground beef</option>
+        <!-- <option>gums</option>
+        <option>ham</option>
+        <option>hand protein bar</option> -->
+        <option>herb & pepper</option>
+        <!-- <option>honey</option>
+        <option>hot dogs</option>
+        <option>ketchup</option> -->
+        <option>light cream</option>
+        <!-- <option>light mayo</option>
+        <option>low fat yogurt</option> -->
+        <!-- <option>magazines</option>
+        <option>mashed potato</option>
+        <option>mayonnaise</option>
+        <option>meatballs</option>
+        <option>melons</option> -->
+        <option>milk</option>
+        <option>mineral water</option>
+        <!-- <option>mint</option>
+        <option>mint green tea</option>
+        <option>muffins</option> -->
+        <option>mushroom cream sauce</option>
+        <option>nonfat milk</option>
+        <!-- <option>oatmeal</option>
+        <option>oil</option> -->
+        <option>olive oil</option>
+        <option>pancakes</option>
+        <!-- <option>parmesan cheese</option> -->
+        <option>pasta</option>
+        <!-- <option>pepper</option>
+        <option>pet food</option>
+        <option>pickles</option>
+        <option>protein bar</option> -->
+        <!-- <option>red wine</option>
+        <option>rice</option>
+        <option>salad</option>
+        <option>salmon</option>
+        <option>salt</option>
+        <option>sandwich</option>
+        <option>shallot</option>
+        <option>shampoo</option> -->
+        <option>shrimp</option>
+        <!-- <option>soda</option> -->
+        <option>soup</option>
+        <option>spaghetti</option>
+        <!-- <option>sparkling water</option>
+        <option>spinach</option>
+        <option>strawberries</option>
+        <option>strong cheese</option> -->
+        <!-- <option>tomato juice</option> -->
+        <option>tomato sauce</option>
+        <option>tomatoes</option>
+        <!-- <option>toothpaste</option>
+        <option>turkey</option> -->
+        <!-- <option>vegetables mix</option>
+        <option>white wine</option>
+        <option>whole weat flour</option> -->
+        <option>whole wheat pasta</option>
+        <!-- <option>whole wheat rice</option>
+        <option>yams</option>
+        <option>yogurt cake</option> -->
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary final btn-block" >Recommend Product</button>
+  </form>
+{% endblock %}

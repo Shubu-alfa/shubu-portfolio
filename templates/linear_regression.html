@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Automobile Price Prediction</h1>
+      <p class="lead text-muted">Car Price Prediction is really an interesting machine learning problem as there are many factors that influence the price of a car in the Car market.</p>
+      <br>
+      <br>
+      {{prediction_text}}
+    </div>
+  </section>
+<form method ="POST" class ="form_shubu" action="{{ url_for('linear_regressor') }}" method ="POST">
+
+    <div class="form-group col">
+      <label for="exampleFormControlSelect1">Number of Cylinders</label>
+      <select class="form-control" id="exampleFormControlSelect1" name = "no_of_cylinders">
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>7</option>
+        <option>8</option>
+        <option>12</option>
+      </select>
+    </div>
+
+
+    <div class="form-group col">
+      <label for="inputPassword4">Compression Ratio</label>
+      <input type="number" min="7" max = "23" class="form-control" id="inputPassword4" placeholder="Compression Ratio" name = "compression_ratio" required>
+    </div>
+
+
+    <div class="form-group col">
+    <label for="inputAddress6">Horse Power</label>
+    <input type="number" min="48" max = "262" class="form-control" id="inputAddress" placeholder="Horse Power" name = "horse_power" required>
+    </div>
+
+
+    <div class="form-group col">
+      <label for="inputAddress2">Peak RPM</label>
+      <input type="number" min="4150" max = "6600" class="form-control" id="inputAddress2" placeholder="Peak RPM" name = "peak_rpm" required>
+    </div>
+    <div class="form-group col">
+      <label for="inputAddress2">Highway mpg</label>
+      <input type="number" min="16" max = "54" class="form-control" id="inputAddress2" placeholder="Highway mpg" name = "highway_mpg" required>
+    </div>
+
+    <div class="form-group col">
+      <label for="exampleFormControl12">Car Brand</label>
+      <select class="form-control" id="exampleFormControl12" name = "brand">
+        <option>Alfa-romero</option>
+        <option>Audi</option>
+        <option>BMW</option>
+        <option>Chevrolet</option>
+        <option>Dodge</option>
+        <option>Honda</option>
+        <option>Isuzu</option>
+        <option>Jaguar</option>
+        <option>Mazda</option>
+        <option>Mercedes-benz</option>
+        <option>Mercury</option>
+        <option>Mitsubishi</option>
+        <option>Nissan</option>
+        <option>Peugot</option>
+        <option>Plymouth</option>
+        <option>Porsche</option>
+        <option>Saab</option>
+        <option>Subaru</option>
+        <option>Toyota</option>
+        <option>Volkswagen</option>
+        <option>Volvo</option>
+      </select>
+    </div>
+
+    <div class="form-group col">
+      <label for="exampleFormControlSelect1">Fuel_Type</label>
+      <select class="form-control" id="exampleFormControlSelect1" name = "fuel_type">
+        <option>Diesel</option>
+        <option>Gas</option>
+      </select>
+    </div>
+
+    <div class="form-group col">
+      <label for="exampleFormControlSelect1">Engine aspiration</label>
+      <select class="form-control" id="exampleFormControlSelect1" name = "aspiration">
+        <option>Standard</option>
+        <option>Turbo</option>
+      </select>
+    </div>
+
+    <div class="form-group col">
+      <label for="exampleFormControlSelect1">Number of Doors</label>
+      <select class="form-control" id="exampleFormControlSelect1" name = "no_of_doors">
+        <option>Two</option>
+        <option>Four</option>
+      </select>
+    </div>
+    <div class="form-group col">
+      <label for="exampleFormControlSelect1">Body-Style</label>
+      <select class="form-control" id="exampleFormControlSelect1" name = "body_style">
+        <option>Convertible</option>
+        <option>HardTop</option>
+        <option>HatchBag</option>
+        <option>Sedan</option>
+        <option>Wagon</option>
+      </select>
+    </div>
+    <div class="form-group col">
+      <label for="exampleFormControlSelect1">Drive Wheels</label>
+      <select class="form-control" id="exampleFormControlSelect1" name = "drive_wheels">
+        <option>Four Wheel Drive</option>
+        <option>Front Wheel Drive</option>
+        <option>Back Wheel Drive</option>
+      </select>
+    </div>
+    <div class="form-group col">
+      <label for="exampleFormControlSelect1">Engine Location</label>
+      <select class="form-control" id="exampleFormControlSelect1" name = "engine_location">
+        <option>Front</option>
+        <option>Rear</option>
+      </select>
+    </div>
+    <div class="form-group col">
+      <label for="exampleFormControlSelect1">Engine Type</label>
+      <select class="form-control" id="exampleFormControlSelect1" name = "engine_type">
+        <option>dohc</option>
+        <option>I</option>
+        <option>ohc</option>
+        <option>ohcf</option>
+        <option>ohcv</option>
+      </select>
+    </div>
+    <div class="form-group col">
+      <label for="exampleFormControlSelect1">Fuel System</label>
+      <select class="form-control" id="exampleFormControlSelect1" name = "fuel_system">
+        <option>1bbl</option>
+        <option>2bbl</option>
+        <option>idi</option>
+        <option>mfi</option>
+        <option>mpfi</option>
+        <option>spdi</option>
+        <option>spfi</option>
+      </select>
+    </div>
+
+
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary final btn-block" >Predict Price</button>
+</form>
+{% endblock %}

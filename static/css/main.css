@@ -1,0 +1,55 @@
+.jumbotron {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 468px) {
+  .jumbotron {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+.btn-primary.yellow{
+  background-color: #e6e600;
+  border-color: #e6e600;
+  color: #000
+  /*text-shadow: 1px 1px 0 #000000;*/
+}
+.btn-outline-warning.yellow_1{
+  /*background-color: #e6e600;
+  border-color: #e6e600;
+  color: #000*/
+
+  /*text-shadow: 1px 1px 0 #000000;*/
+
+}
+.btn.btn-primary.final{
+  background-color: #e6e600;
+  border-color: #e6e600;
+  color: #000
+}
+.form_shubu{
+  text-align: center;
+}
