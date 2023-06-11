@@ -1,18 +1,21 @@
 import random
 import json
+import requests
 
+API_URL = "https://api-inference.huggingface.co/models/Shubu0103/shubhz-ai-folio-chat-model-base"
+headers = {"Authorization": "Bearer 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"}
 
-from transformers import pipeline
-from transformers import AutoModelWithLMHead, AutoTokenizer
-tokenizer = AutoTokenizer.from_pretrained("flan-alpaca-base")
-model = AutoModelWithLMHead.from_pretrained("flan-alpaca-base")
-import torch
+# from transformers import pipeline
+# from transformers import AutoModelWithLMHead, AutoTokenizer
+# tokenizer = AutoTokenizer.from_pretrained("flan-alpaca-base")
+# model = AutoModelWithLMHead.from_pretrained("flan-alpaca-base")
+# import torch
 # from model import NeuralNet
 # from nltk_utils import bag_of_words, tokenize
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print("Is cuda available:", torch.cuda.is_available())
-model = model.to(device)
+# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# print("Is cuda available:", torch.cuda.is_available())
+# model = model.to(device)
 #print(model)
 
 #prompt = "Write an email about an alpaca that likes flan"
@@ -43,10 +46,15 @@ def get_response(msg):
     #model(prompt, max_length=128, do_sample=True)
     print(msg)
     input_text = "question: %s " % (msg)
-    features = tokenizer([input_text], return_tensors='pt')
-    out = model.generate(input_ids=features['input_ids'].to(device), attention_mask=features['attention_mask'].to(device))
-    if tokenizer.decode(out[0]):
-        return tokenizer.decode(out[0])
+    response = requests.post(API_URL, headers=headers, json=input_text)
+    print(response.text)
+    output = [i['generated_text'] for i in json.loads(response.text)]
+    return output
+
+    # features = tokenizer([input_text], return_tensors='pt')
+    # out = model.generate(input_ids=features['input_ids'].to(device), attention_mask=features['attention_mask'].to(device))
+    # if tokenizer.decode(out[0]):
+    #     return tokenizer.decode(out[0])
 
     # sentence = tokenize(msg)
     # X = bag_of_words(sentence, all_words)

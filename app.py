@@ -46,10 +46,11 @@ def predict():
     message = {"answer": response}
     return jsonify(message)
 
-@app.post('/recommendation')
+@app.route('/recommendation', methods=['GET', 'POST'])
 def recommendation():
     recommended_item = [0,0]
     input_item = ['Null']
+    app.logger.info('****Recommend**'+str(request.method))
     if request.method == 'POST':
         input_item = str(request.form['item_bought'])
         recommended_item = get_recommend(input_item)
@@ -59,6 +60,7 @@ def recommendation():
         return render_template('recommendation.html', Bought_item='For Bought Item: {}'.format(input_item),Recommended_item='Recommended Item: {}'.format("N/A"),
         Probability='Probability Percentage: {}'.format(str("N/A")))
     else:
+        app.logger.info('****Recommend**'+str(recommended_item[1]))
         probability = round(float(recommended_item[1]),2)*100
         return render_template('recommendation.html', Bought_item='For Bought Item: {}'.format(input_item),Recommended_item='Recommended Item: {}'.format(recommended_item[0]),
         Probability='Probability Percentage: {} %'.format(str(probability)))
