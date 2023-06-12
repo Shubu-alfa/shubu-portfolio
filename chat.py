@@ -1,6 +1,9 @@
 import random
 import json
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 API_URL = "https://api-inference.huggingface.co/models/Shubu0103/shubhz-ai-folio-chat-model-base"
 headers = {"Authorization": "Bearer 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"}
@@ -49,7 +52,10 @@ def get_response(msg):
     response = requests.post(API_URL, headers=headers, json=input_text)
     print(response.text)
     output = [i['generated_text'] for i in json.loads(response.text)]
-    return output
+    if output:
+        return output
+    else:
+        return "Model still loading..."
 
     # features = tokenizer([input_text], return_tensors='pt')
     # out = model.generate(input_ids=features['input_ids'].to(device), attention_mask=features['attention_mask'].to(device))
@@ -84,6 +90,10 @@ if __name__ == "__main__":
         if sentence == "quit":
             break
 
-        resp = get_response(sentence)
+        resp = get_response({
+            "inputs":sentence,
+            "options":{"wait_for_model":True}
+
+        })
         print(resp)
 
