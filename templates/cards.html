@@ -1,58 +1,58 @@
-{% extends "layout.html" %}
+{% extends "layout2.html" %}
+{% block title %}Projects - ShubhzAIFolio{% endblock %}
 {% block content %}
-<section class="jumbotron text-center">
+<section class="page-hero text-center" id="top">
     <div class="container">
-      <h1 class="jumbotron-heading">Machine Learning</h1>
-      <p class="lead text-muted">Here, I will be showcasing you the implementations of Machine Learning models that will help you in understanding the case studies and use cases for
-Supervised and Unsupervised learning algorithms.</p>
-      <p>
-        <a href="#" class="btn btn-primary my-2 yellow">Supervised Algorithms</a>
-        <a href="#" class="btn btn-secondary my-2">Unsupervised Algorithms</a>
-      </p>
+        <h1 class="page-hero__title">Machine Learning</h1>
+        <p class="page-hero__lead">
+            Implementations of supervised and unsupervised learning algorithms —
+            practical case studies you can explore and try.
+        </p>
     </div>
-  </section>
-  <div class="container">
+</section>
+
+<div class="container project-grid-wrap">
     <div class="row">
-      <div class="col">
-        <div class="card">
-          <img src="../static/media/regression.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Regression Analysis</h5>
-            <p class="card-text">Regression models are used to predict a continuous value. Predicting prices of a house given the features of house like size, price etc. is one of the common examples of Regression. Regression Analysis comes under Supervised technique.</p>
-            <a href="{{ url_for('regressor') }}" class="btn btn-outline-warning yellow_1 btn-block">Predict</a>
-          </div>
+        <div class="col-12 col-md-6 col-xl-3 mb-4">
+            <div class="card project-card h-100">
+                <img src="{{ url_for('static', filename='media/regression.png') }}" class="card-img-top" alt="Regression analysis illustration">
+                <div class="card-body d-flex flex-column">
+                    <h2 class="h5 card-title">Regression Analysis</h2>
+                    <p class="card-text flex-grow-1">Predict continuous values such as house prices from features like size and location. A core supervised learning technique.</p>
+                    <a href="{{ url_for('regressor') }}" class="btn btn-outline-warning yellow_1 btn-block mt-auto">Predict</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="../static/media/Classification.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Classification Analysis</h5>
-            <p class="card-text">Classification is a supervised learning approach in which the computer program learns from the data input given to it and then uses this learning to classify new observation. This data set may simply be bi-class(spam/No Spam) or it may be multi-class too.</p>
-            <a href="#" class="btn btn-outline-warning yellow_1 btn-block">Classify</a>
-          </div>
+        <div class="col-12 col-md-6 col-xl-3 mb-4">
+            <div class="card project-card h-100">
+                <img src="{{ url_for('static', filename='media/Classification.png') }}" class="card-img-top" alt="Classification analysis illustration">
+                <div class="card-body d-flex flex-column">
+                    <h2 class="h5 card-title">Classification Analysis</h2>
+                    <p class="card-text flex-grow-1">Learn from labeled examples to classify new observations — binary or multi-class problems like spam detection.</p>
+                    <a href="#" class="btn btn-outline-warning yellow_1 btn-block mt-auto disabled" aria-disabled="true">Coming soon</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="../static/media/Clustering.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Clustering Analysis</h5>
-            <p class="card-text">Clustering is the process of grouping similar entities together. The goal of this technique is to find similarities in the data point and group similar data points together. Clustering comes under Unsupervised learning techniques.</p>
-            <a href="#" class="btn btn-outline-warning yellow_1 btn-block">Cluster</a>
-          </div>
+        <div class="col-12 col-md-6 col-xl-3 mb-4">
+            <div class="card project-card h-100">
+                <img src="{{ url_for('static', filename='media/Clustering.png') }}" class="card-img-top" alt="Clustering analysis illustration">
+                <div class="card-body d-flex flex-column">
+                    <h2 class="h5 card-title">Clustering Analysis</h2>
+                    <p class="card-text flex-grow-1">Group similar data points without labels. Useful for segmentation and pattern discovery in unsupervised settings.</p>
+                    <a href="#" class="btn btn-outline-warning yellow_1 btn-block mt-auto disabled" aria-disabled="true">Coming soon</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="../static/media/Recommendations.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Recommendations</h5>
-            <p class="card-text">Recommender Systems are machine learning systems that help users discover new product and services. Every time you shop online, Recommendation system is guiding towards the most likely product the user is going to buy.</p>
-            <a href="{{ url_for('recommendation') }}" class="btn btn-outline-warning yellow_1 btn-block">Recommend</a>
-          </div>
+        <div class="col-12 col-md-6 col-xl-3 mb-4">
+            <div class="card project-card h-100">
+                <img src="{{ url_for('static', filename='media/Recommendations.png') }}" class="card-img-top" alt="Recommendation system illustration">
+                <div class="card-body d-flex flex-column">
+                    <h2 class="h5 card-title">Recommendations</h2>
+                    <p class="card-text flex-grow-1">Help users discover products and services based on behavior and item associations — the engine behind many online stores.</p>
+                    <a href="{{ url_for('recommendation') }}" class="btn btn-outline-warning yellow_1 btn-block mt-auto">Recommend</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 {% endblock %}

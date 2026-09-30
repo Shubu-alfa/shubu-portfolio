@@ -1,2 +1,14 @@
 shubu-portfolio-env/
+venv/
+.venv/
+.env
 *.bin
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.sqlite3
+local_chat.db
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+.vscode/

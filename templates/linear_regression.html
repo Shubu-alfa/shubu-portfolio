@@ -1,15 +1,16 @@
-{% extends "layout.html" %}
+{% extends "layout2.html" %}
+{% block title %}Automobile Price Prediction - ShubhzAIFolio{% endblock %}
 {% block content %}
-<section class="jumbotron text-center">
+<section class="page-hero text-center" id="top">
     <div class="container">
-      <h1 class="jumbotron-heading">Automobile Price Prediction</h1>
-      <p class="lead text-muted">Car Price Prediction is really an interesting machine learning problem as there are many factors that influence the price of a car in the Car market.</p>
-      <br>
-      <br>
-      {{prediction_text}}
+      <h1 class="page-hero__title">Automobile Price Prediction</h1>
+      <p class="page-hero__lead">Explore how car features influence market price with a classic regression example.</p>
+      {% if prediction_text %}
+      <p class="mt-3 font-weight-bold">{{ prediction_text }}</p>
+      {% endif %}
     </div>
   </section>
-<form method ="POST" class ="form_shubu" action="{{ url_for('regressor') }}" method ="POST">
+<form method="POST" class="form_shubu container" action="{{ url_for('linear_regressor') }}">
 
     <div class="form-group col">
       <label for="exampleFormControlSelect1">Number of Cylinders</label>

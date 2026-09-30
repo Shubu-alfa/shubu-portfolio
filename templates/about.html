@@ -1,9 +1,14 @@
-{% extends "layout.html" %}
+{% extends "layout2.html" %}
+{% block title %}About - ShubhzAIFolio{% endblock %}
 {% block content %}
-<section class="jumbotron text-center">
+<section class="page-hero text-center" id="top">
     <div class="container">
-      <h1 class="jumbotron-heading">Shubham Mishra</h1>
-      <p class="lead text-muted">A data science professional who uses analytical, statistical, and programming skills to extract insights and knowledge from large and complex sets of data. I employ various techniques, tools, and algorithms to analyze data and uncover patterns, trends, and correlations that can drive informed business decisions.</p>
+        <h1 class="page-hero__title">Shubham Mishra</h1>
+        <p class="page-hero__lead">
+            A data science professional who uses analytical, statistical, and programming skills
+            to extract insights from large, complex datasets — uncovering patterns and correlations
+            that drive informed business decisions.
+        </p>
     </div>
-  </section>
+</section>
 {% endblock %}

@@ -1,21 +1,21 @@
-{% extends "layout.html" %}
+{% extends "layout2.html" %}
+{% block title %}Recommendations - ShubhzAIFolio{% endblock %}
 {% block content %}
-<section class="jumbotron text-center">
+<section class="page-hero text-center" id="top">
     <div class="container">
-      <h1 class="jumbotron-heading">Item Recommendation System</h1>
-      <p class="lead text-muted">Recommender systems help the users to get personalized recommendations, helps users to take correct decisions in their online transactions, increase sales and redefine the users web browsing experience, retain the customers, enhance their shopping experience.</p>
-      <br>
-      {{Bought_item}}
-      <br>
-      {{Recommended_item}}
-      <br>
-      {{Probability}}
+      <h1 class="page-hero__title">Item Recommendation System</h1>
+      <p class="page-hero__lead">Get personalized product suggestions based on what was bought — useful for online retail and discovery.</p>
+      <div class="recommend-result mt-3">
+        <p class="mb-1">{{ Bought_item }}</p>
+        <p class="mb-1">{{ Recommended_item }}</p>
+        <p class="mb-0">{{ Probability }}</p>
+      </div>
     </div>
   </section>
-  <form method ="POST" class ="form_shubu_v1" action="{{ url_for('recommendation') }}" method ="POST">
-    <div class="form-group col">
+  <form method="POST" class="form_shubu container" action="{{ url_for('recommendation') }}">
+    <div class="form-group">
       <label for="exampleFormControlSelect1">Product Bought</label>
-      <select class="form-control" id="exampleFormControlSelect1" name = "item_bought">
+      <select class="form-control" id="exampleFormControlSelect1" name="item_bought">
         <!-- <option>almonds</option>
         <option>antioxydant juice</option>
         <option>asparagus</option>
@@ -133,6 +133,6 @@
         <option>yogurt cake</option> -->
       </select>
     </div>
-    <button type="submit" class="btn btn-primary final btn-block" >Recommend Product</button>
+    <button type="submit" class="btn btn-primary final btn-block">Recommend Product</button>
   </form>
 {% endblock %}

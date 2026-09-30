@@ -1,38 +1,44 @@
-{% extends "layout.html" %}
+{% extends "layout2.html" %}
+{% block title %}Regression - ShubhzAIFolio{% endblock %}
 {% block content %}
-
+<section class="page-hero text-center" id="top">
   <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <img src="../static/media/Linear_Regression.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Linear Regression Analysis</h5>
-            <p class="card-text">The linear regression technique involves the continuous dependent variable and the independent variables can be continuous or discrete.</p>
-            <a href="{{ url_for('regressor') }}" class="btn btn-outline-warning yellow_1 btn-block">Example</a>
-          </div>
+    <h1 class="page-hero__title">Regression Models</h1>
+    <p class="page-hero__lead">Explore common supervised techniques for predicting continuous and categorical outcomes.</p>
+  </div>
+</section>
+<div class="container project-grid-wrap">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card project-card h-100">
+        <img src="{{ url_for('static', filename='media/Linear_Regression.png') }}" class="card-img-top" alt="Linear regression illustration">
+        <div class="card-body d-flex flex-column">
+          <h2 class="h5 card-title">Linear Regression</h2>
+          <p class="card-text flex-grow-1">Predict a continuous dependent variable from continuous or discrete independent features.</p>
+          <a href="{{ url_for('linear_regressor') }}" class="btn btn-outline-warning yellow_1 btn-block mt-auto">Example</a>
         </div>
       </div>
-      <div class="col">
-        <div class="card">
-          <img src="../static/media/Logistic_Regression.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Logistic Regression Analysis</h5>
-            <p class="card-text">The logistic regression technique involves dependent variable which can be represented in the binary (0 or 1, true or false, yes or no) values.</p>
-            <a href="#" class="btn btn-outline-warning yellow_1 btn-block">Example</a>
-          </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card project-card h-100">
+        <img src="{{ url_for('static', filename='media/Logistic_Regression.png') }}" class="card-img-top" alt="Logistic regression illustration">
+        <div class="card-body d-flex flex-column">
+          <h2 class="h5 card-title">Logistic Regression</h2>
+          <p class="card-text flex-grow-1">Model binary outcomes such as true/false or yes/no using a logistic function.</p>
+          <a href="#" class="btn btn-outline-warning yellow_1 btn-block mt-auto disabled" aria-disabled="true">Coming soon</a>
         </div>
       </div>
-      <div class="col">
-        <div class="card">
-          <img src="../static/media/svm.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Support Vector Machines</h5>
-            <p class="card-text">Support Vector Machine (SVM) is a supervised machine learning algorithm which can be used for both classification or regression challenges.</p>
-            <a href="#" class="btn btn-outline-warning yellow_1 btn-block">Example</a>
-          </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card project-card h-100">
+        <img src="{{ url_for('static', filename='media/svm.png') }}" class="card-img-top" alt="Support vector machines illustration">
+        <div class="card-body d-flex flex-column">
+          <h2 class="h5 card-title">Support Vector Machines</h2>
+          <p class="card-text flex-grow-1">Supervised algorithm for classification and regression that finds an optimal separating margin.</p>
+          <a href="#" class="btn btn-outline-warning yellow_1 btn-block mt-auto disabled" aria-disabled="true">Coming soon</a>
         </div>
       </div>
     </div>
   </div>
+</div>
 {% endblock %}
